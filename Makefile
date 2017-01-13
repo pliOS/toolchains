@@ -4,10 +4,14 @@
 # in the LICENSE file.
 
 CTNG_VER := 1.22.0
+CTNG := $(shell pwd)/out/ctng/bin/ct-ng
 
 .PHONY: all
 
-all: out/ctng
+all: out/x86_64
+
+out/x86_64: out/ctng
+	@cd x86_64 && $(CTNG) build
 
 out/ctng: out/crosstool-ng
 	@cd out/crosstool-ng && ./configure --prefix=$(shell pwd)/out/ctng
