@@ -1,8 +1,22 @@
 language: c
 compiler: gcc
-install: 'sudo apt-get install gawk bison flex gperf cvs texinfo automake libtool  ncurses-dev
-  g++ subversion python-dev libexpat1-dev cmake
-'
+install: >
+  sudo apt-get install
+  gawk
+  bison 
+  flex 
+  gperf 
+  cvs 
+  texinfo 
+  automake 
+  libtool 
+  ncurses-dev 
+  g++ 
+  subversion 
+  python-dev 
+  libexpat1-dev 
+  cmake
+  help2man
 
 script: make
 deploy:
