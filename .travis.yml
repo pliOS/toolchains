@@ -1,0 +1,16 @@
+language: c
+compiler: gcc
+install: 'sudo apt-get install gawk bison flex gperf cvs texinfo automake libtool  ncurses-dev
+  g++ subversion python-dev libexpat1-dev cmake
+'
+
+script: make
+deploy:
+  provider: releases
+  api_key:
+    secure: tkmfu+h/le6NtBwSSt6gKum/EHFEb2IRWyP8MRc+1paVyU14TfltN2DRueK7Y2T39u7/L3PvvYHzMaw5UTeqJdSa0ZFRZVmdOhwaKH6z1OI+6jfuKSY8sgBRAC9X6DiUV4jJn2BDT0dfwO6hZ3p+t21U/BSsx4ZmEQdMqTqr5wcxVXJa5llawGb659sRPmP+BzKxZvuOvb2og/ZNRZXTmusSdO2XQnyn3sp250DSVN3VkOiPHeiVSKPBzA/pCSoEwmQKG39flj2dJpZn6BjT4xqZbDY00Rt8va/dU7uvIrWx7Dlmt+dXrFhpTn5f+LJh7sZioL54++q8EEm2KZlVFkrM6FuMI7xFhCEJQr0FWVYYpiAPR8NKwUWKzNqogDeb8jjECJGIEgfdi1g10tj0x58bPXx4yUSsdoNGs1gu+xO/iFDf25tZCdvHND2Q1Cr6b7MJw3RaE3mE6RUw2xgdlkoCMjPq2Ab1tdqxxflFJ3KRGsFUjx9wh8tKFLRIBLo6lw6/fJ+d9KUNpFP7Gu9/aR/RnxI7ibjwn9cLP8VuTdGHjTUP9JxwFu5AJFxdUlZHPPa9MzQ5wF8curbDNlmlDc5soWlbvfW4on6fIb0CDb03a/QJSEahDAAWmfonu3J3nz60tbfaYPUl2NMjGBYf1cwiqzesa0fGGXizlKHOIiE=
+  file:
+    - out/armv7-unknown-linux-musleabihf.tar.gz
+    - out/x86_64-unknown-linux-musl.tar.gz
+  on:
+    repo: pliOS/toolchains
